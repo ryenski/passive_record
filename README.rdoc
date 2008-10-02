@@ -15,7 +15,7 @@ PassiveRecord was developed for Sharp Sync, a new product by {Ministry Centered 
     define_attributes [:first_name, :middle_name, :last_name]
   end
 
-...will create a new EmailAddress model with id, address, and location attributes. 
+...will create a new Name model with id, address, and location attributes. 
 
   class Person < PassiveRecord
     has_many :names
