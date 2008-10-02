@@ -6,17 +6,17 @@ PassiveRecord was developed by {Art of Mission, Inc.}[http://artofmission.com] f
 
 == Installation
 
-Download PassiveRecord from Github: http://github.com/artofmission/passiverecord
+Download PassiveRecord from Github: http://github.com/artofmission/passive_record
 
 === Install using Git Submodules: 
 
-  git submodule add http://github.com/artofmission/passiverecord vendor/plugins/passiverecord
+  git submodule add http://github.com/artofmission/passive_record vendor/plugins/passive_record
   git submodule init
   git submodule update
 
 === Install with Rails' plugin installer
 
-  ./script/plugin install git://github.com/artofmission/passiverecord.git
+  ./script/plugin install git://github.com/artofmission/passive_record.git
 
 == Example
 
