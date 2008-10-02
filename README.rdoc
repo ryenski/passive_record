@@ -2,12 +2,21 @@
 
 PassiveRecord provides ActiveRecord-like behavior for static, non-database models. 
 
-PassiveRecord was developed for Sharp Sync, a new product by {Ministry Centered Technologies}[http://www.planningcenteronline.com/]
+PassiveRecord was developed by {Art of Mission, Inc.}[http://artofmission.com] for Sharp Sync, a new product by {Ministry Centered Technologies}[http://www.planningcenteronline.com/]
 
-== Resources for Non-ActiveRecord models 
+== Installation
 
-* http://railscasts.com/episodes/121-non-active-record-model
+Download PassiveRecord from Github: http://github.com/artofmission/passiverecord
 
+=== Install using Git Submodules: 
+
+  git submodule add http://github.com/artofmission/passiverecord vendor/plugins/passiverecord
+  git submodule init
+  git submodule update
+
+=== Install with Rails' plugin installer
+
+  ./script/plugin install git://github.com/artofmission/passiverecord.git
 
 == Example
 
@@ -39,6 +48,10 @@ You can serialize a PassiveRecord object into another database object for storag
   end
   
   @company.address = Address.new(:street1 => "123 4th St", :city => "Wellington", :country => "NZ")
+
+== Resources for Non-ActiveRecord models 
+
+* http://railscasts.com/episodes/121-non-active-record-model
 
 == Due Credit
 

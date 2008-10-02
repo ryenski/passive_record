@@ -56,7 +56,7 @@
     </tr>
     <tr class="top-aligned-row">
       <td><strong>Last Update:</strong></td>
-      <td>Thu Oct 02 14:46:25 -0500 2008</td>
+      <td>Thu Oct 02 16:12:55 -0500 2008</td>
     </tr>
     </table>
   </div>
@@ -75,18 +75,27 @@
 ActiveRecord-like behavior for static, non-database models.
 </p>
 <p>
-<a href="../classes/PassiveRecord.html">PassiveRecord</a> was developed for
-Sharp Sync, a new product by <a
-href="http://www.planningcenteronline.com/">Ministry Centered
-Technologies</a>
+<a href="../classes/PassiveRecord.html">PassiveRecord</a> was developed by
+<a href="http://artofmission.com">Art of Mission, Inc.</a> for Sharp Sync,
+a new product by <a href="http://www.planningcenteronline.com/">Ministry
+Centered Technologies</a>
 </p>
-<h2>Resources for Non-ActiveRecord models</h2>
-<ul>
-<li><a
-href="http://railscasts.com/episodes/121-non-active-record-model">railscasts.com/episodes/121-non-active-record-model</a>
-
-</li>
-</ul>
+<h2>Installation</h2>
+<p>
+Download <a href="../classes/PassiveRecord.html">PassiveRecord</a> from
+Github: <a
+href="http://github.com/artofmission/passiverecord">github.com/artofmission/passiverecord</a>
+</p>
+<h3>Install using Git Submodules:</h3>
+<pre>
+  git submodule add http://github.com/artofmission/passiverecord vendor/plugins/passiverecord
+  git submodule init
+  git submodule update
+</pre>
+<h3>Install with Rails&#8217; plugin installer</h3>
+<pre>
+  ./script/plugin install git://github.com/artofmission/passiverecord.git
+</pre>
 <h2>Example</h2>
 <pre>
   class Name &lt; PassiveRecord
@@ -127,6 +136,13 @@ database object for storage:
 
   @company.address = Address.new(:street1 =&gt; &quot;123 4th St&quot;, :city =&gt; &quot;Wellington&quot;, :country =&gt; &quot;NZ&quot;)
 </pre>
+<h2>Resources for Non-ActiveRecord models</h2>
+<ul>
+<li><a
+href="http://railscasts.com/episodes/121-non-active-record-model">railscasts.com/episodes/121-non-active-record-model</a>
+
+</li>
+</ul>
 <h2>Due Credit</h2>
 <ul>
 <li><a href="http://www.planningcenteronline.com/">Ministry Centered
