@@ -58,4 +58,8 @@ You can serialize a PassiveRecord object into another database object for storag
 * {Ministry Centered Technologies}[http://www.planningcenteronline.com/] created the need
 * Ryan Heneise of {Art of Mission, Inc.}[http://artofmission.com/] wrote the code
 
+=== Contributors
+
+* felipemesquita (http://github.com/felipemesquita)
+
 Copyright (c) 2008 Ryan Heneise, released under the MIT license
