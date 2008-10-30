@@ -32,8 +32,36 @@ class PassiveRecord
   # @my_passive_model.to_xml(:skip_instruct => true, :root => "records")
   #
   # Associations:
-  # @my_passive_model.to_xml(:include => :all) # include all associations
-  # @my_passive_model.to_xml(:include => [:specific_association]) # include the specific association
+  #   @my_passive_model.to_xml(:include => :all) # include all associations
+  #   @my_passive_model.to_xml(:include => [:specific_association]) # include the specific association
+  #
+  # Including aditional methods:
+  #   Post < PassiveRecord
+  #     define_attributes [:title, :content, :created_by]
+  #     
+  #     def complete_title
+  #       "#{self.title} by #{self.created_by}"
+  #     end
+  #   end
+  #
+  #   post = Post.new(:title => 'Open source projects are awesome!', :created_by => 'Felipe Mesquita', :content => '...')
+  #   post.to_xml
+  #     #=>   <?xml version='1.0' encoding='UTF-8'?>
+  #           <post>
+  #             <title>Open source projects are awesome!</title>
+  #             <created_by>Felipe Mesquita</created_by>
+  #             <content>...</content>
+  #           </post>
+  #
+  #   post.to_xml(:methods => [:complete_title])
+  #     #=>   <?xml version='1.0' encoding='UTF-8'?>
+  #           <post>
+  #             <title>Open source projects are awesome!</title>
+  #             <created_by>Felipe Mesquita</created_by>
+  #             <content>...</content>
+  #             <complete-title>Open source projects are awesome! by Felipe Mesquita</complete-title>
+  #           </post>
+  #
   def to_xml(options = {})
     xml_serializer.to_xml(self, options)
   end
