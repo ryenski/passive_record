@@ -90,7 +90,7 @@
       <a href="#M000007">associations</a>&nbsp;&nbsp;
       <a href="#M000002">attributes</a>&nbsp;&nbsp;
       <a href="#M000006">attributes</a>&nbsp;&nbsp;
-      <a href="#M000005">define_attributes</a>&nbsp;&nbsp;
+      <a href="#M000005">define_fields</a>&nbsp;&nbsp;
       <a href="#M000004">has_many</a>&nbsp;&nbsp;
       <a href="#M000001">new</a>&nbsp;&nbsp;
       </div>
@@ -204,7 +204,7 @@ href="PassiveRecord.html#M000002">attributes</a> for the class
 
         <div class="method-heading">
           <a href="#M000005" class="method-signature">
-          <span class="method-name">define_attributes</span><span class="method-args">(attrs)</span>
+          <span class="method-name">define_fields</span><span class="method-args">(attrs)</span>
           </a>
         </div>
       
@@ -214,7 +214,7 @@ Creates instance methods for each item in the list. Expects an array
 </p>
 <pre>
   class Address &lt; PassiveRecord
-    define_attributes [:street, :city, :state, :postal_code, :country]
+    define_fields [:street, :city, :state, :postal_code, :country]
   end
 </pre>
           <p><a class="source-toggle" href="#"
@@ -222,7 +222,7 @@ Creates instance methods for each item in the list. Expects an array
           <div class="method-source-code" id="M000005-source">
 <pre>
     <span class="ruby-comment cmt"># File lib/passive_record.rb, line 43</span>
-43:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">define_attributes</span>(<span class="ruby-identifier">attrs</span>)
+43:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">define_fields</span>(<span class="ruby-identifier">attrs</span>)
 44:       <span class="ruby-ivar">@attributes</span> = <span class="ruby-identifier">attrs</span>
 45:       <span class="ruby-comment cmt"># Assign attr_accessor for each attribute in the list</span>
 46:       <span class="ruby-identifier">attrs</span>.<span class="ruby-identifier">each</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">att</span><span class="ruby-operator">|</span> <span class="ruby-identifier">attr_accessor</span> <span class="ruby-identifier">att</span>}
