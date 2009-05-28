@@ -16,7 +16,6 @@ module PassiveRecord
       self.class.fields.flatten.each {|att| @attributes[att] = self.send(att) }
       @attributes
     end
-    class_inheritable_accessor :fields
   
     # Compare this object with another object of the same class. 
     # Returns true if the attributes and values are identical. 
@@ -26,6 +25,7 @@ module PassiveRecord
       self.attributes == other.attributes
     end
   
+    class_inheritable_accessor :fields, :associations
   
     class << self
       # Provide some basic ActiveRecord-like methods for working with non-ActiveRecord objects
@@ -34,7 +34,7 @@ module PassiveRecord
       #   end
       def has_many(*associations)
         # Simply sets up an attr_accessor for each item in the list
-        @associations = associations
+        self.associations = associations
         associations.each {|association| attr_accessor association}
       end
     
@@ -58,9 +58,6 @@ module PassiveRecord
       # Returns the list of available has_many associations
       # 
       #   Model.associations #=> [:names, :addresses]
-      def associations
-        @associations
-      end
     end
   
   end
