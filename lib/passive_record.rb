@@ -43,7 +43,9 @@ module PassiveRecord
       #     define_fields [:street, :city, :state, :postal_code, :country]
       #   end
       def define_fields(attrs)
-        self.fields = attrs
+        self.fields ||= []
+        self.fields << attrs
+        self.fields = self.fields.flatten.uniq
         # Assign attr_accessor for each attribute in the list
         attrs.each {|att| attr_accessor att}
       end
