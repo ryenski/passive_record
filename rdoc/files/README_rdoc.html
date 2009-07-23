@@ -99,7 +99,7 @@ href="http://github.com/artofmission/passive_record">github.com/artofmission/pas
 <h2>Example</h2>
 <pre>
   class Name &lt; PassiveRecord
-    define_fields [:first_name, :middle_name, :last_name]
+    define_fields :first_name, :middle_name, :last_name
   end
 </pre>
 <p>
@@ -127,7 +127,7 @@ database object for storage:
 </p>
 <pre>
   class Address &lt; PassiveRecord
-    define_fields [:street, :city, :state, :postal_code, :country]
+    define_fields :street, :city, :state, :postal_code, :country
   end
 
   class Company &lt; ActiveRecord

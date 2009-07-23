@@ -21,7 +21,7 @@ Download PassiveRecord from Github: http://github.com/artofmission/passive_recor
 == Example
 
   class Name < PassiveRecord::Base
-    define_fields [:first_name, :middle_name, :last_name]
+    define_fields :first_name, :middle_name, :last_name
   end
 
 ...will create a new Name model with id, address, and location attributes. 
@@ -40,7 +40,7 @@ This would a Person object that has many names. You can now access the names has
 You can serialize a PassiveRecord object into another database object for storage: 
   
   class Address < PassiveRecord::Base
-    define_fields [:street, :city, :state, :postal_code, :country]
+    define_fields :street, :city, :state, :postal_code, :country
   end
   
   class Company < ActiveRecord

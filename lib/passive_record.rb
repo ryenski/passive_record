@@ -24,6 +24,10 @@ module PassiveRecord
     def ===(other)
       self.attributes == other.attributes
     end
+    
+    def new_record?
+      self.respond_to?(:id) and !id.blank? ? false : true
+    end
   
     class_inheritable_accessor :fields, :associations
   
@@ -37,12 +41,13 @@ module PassiveRecord
         self.associations = associations
         associations.each {|association| attr_accessor association}
       end
-    
+      alias_method :belongs_to, :has_many
+      
       # Creates instance methods for each item in the list. Expects an array
       #   class Address < PassiveRecord::Base
-      #     define_fields [:street, :city, :state, :postal_code, :country]
+      #     define_fields :street, :city, :state, :postal_code, :country
       #   end
-      def define_fields(attrs)
+      def define_fields(*attrs)
         self.fields ||= []
         self.fields << attrs
         self.fields = self.fields.flatten.uniq
